@@ -1,11 +1,11 @@
 # Lista postaci
-1. Absolute Batman
-2. Kamina
-3. Sukuna
-4. Jotaro Kujo
-5. Simon the Digger
-6. Gyro Zeppeli
-7. Thragg
-8. Goku
-9. Garou
-10. Gojo
+## 1. Gojo
+## 2. Kamina
+## 3. Thragg
+## 4. Goku
+## 5. Garou
+## 6. Jotaro Kujo
+## 7. Simon the Digger
+## 8. Gyro Zeppeli
+## 9. Sukuna
+## 10. Absolute Batman
