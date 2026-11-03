@@ -106,7 +106,8 @@ Symulacja numeryczna rozwiązująca równania różniczkowe modelu rzeczywistego
 | **Czas lotu** $t_{całkowity}$ | $6,01\text{ s}$ | $4,41\text{ s}$ | Skrócenie czasu ekspozycji w powietrzu | 
 | **Początkowy zryw osi $X$** $j_{x}(0)$ | $0,00\text{ m/s}^3$ | $\approx 2,12\text{ m/s}^3$ | Silne szarpnięcie wywołane nagłym oporem po wystrzale | 
 
-![Porównanie modeli ruchu](kompleksowa_analiza_rzutu_uko_nego_files/wykresy.png)
+<img width="1589" height="985" alt="wykresy" src="https://github.com/user-attachments/assets/241347c6-630e-451c-90be-132627e15053" />
+
 
 ### Skrypt Generujący Wizualizacje
 
