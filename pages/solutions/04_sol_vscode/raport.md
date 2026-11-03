@@ -11,9 +11,11 @@ Niniejszy raport stanowi wyczerpujące opracowanie fizyczne zjawiska rzutu ukoś
 W modelu idealnym zakładamy brak jakichkolwiek oporów ruchu, a jedyną siłą działającą na ciało o masie $m$ jest siła ciężkości wywołana jednorodnym polem grawitacyjnym o stałym przyspieszeniu $g_0 \approx 9,81\text{ m/s}^2$. Ciało zostaje wyrzucone z prędkością początkową $v_0$ pod kątem $\alpha$ do poziomu.
 
 **Rozkład prędkości początkowej:**
+
 $$
 v_{0x} = v_0 \cos\alpha
 $$
+
 $$
 v_{0y} = v_0 \sin\alpha
 $$
@@ -22,39 +24,47 @@ $$
 
 1. **Położenie $\vec{r}(t)$:**
    Ruch w osi $X$ jest jednostajny, a w osi $Y$ jednostajnie zmienny.
-   $$
-   x(t) = (v_0 \cos\alpha) t
-   $$
-   $$
-   y(t) = (v_0 \sin\alpha) t - \frac{1}{2} g_0 t^2
-   $$
+   
+$$
+x(t) = (v_0 \cos\alpha) t
+$$
+   
+$$
+y(t) = (v_0 \sin\alpha) t - \frac{1}{2} g_0 t^2
+$$
 
-2. **Prędkość $\vec{v}(t)$:**
+3. **Prędkość $\vec{v}(t)$:**
    Prędkość uzyskujemy poprzez zróżniczkowanie wektora położenia po czasie $t$:
-   $$
-   v_x(t) = \frac{dx}{dt} = v_0 \cos\alpha
-   $$
-   $$
-   v_y(t) = \frac{dy}{dt} = v_0 \sin\alpha - g_0 t
-   $$
+   
+$$
+v_x(t) = \frac{dx}{dt} = v_0 \cos\alpha
+$$
+   
+$$
+v_y(t) = \frac{dy}{dt} = v_0 \sin\alpha - g_0 t
+$$
 
-3. **Przyspieszenie $\vec{a}(t)$:**
+5. **Przyspieszenie $\vec{a}(t)$:**
    Różniczkując prędkość po czasie, otrzymujemy:
-   $$
-   a_x(t) = \frac{dv_x}{dt} = 0\text{ m/s}^2
-   $$
-   $$
-   a_y(t) = \frac{dv_y}{dt} = -g_0
-   $$
+   
+$$
+a_x(t) = \frac{dv_x}{dt} = 0\text{ m/s}^2
+$$
+   
+$$
+a_y(t) = \frac{dv_y}{dt} = -g_0
+$$
 
-4. **Zryw (Jerk) $\vec{j}(t)$:**
+7. **Zryw (Jerk) $\vec{j}(t)$:**
    Zryw określa dynamikę zmian przyspieszenia (tzw. szarpnięcie). W idealnym polu grawitacyjnym przyspieszenie jest stałe, więc jego pochodna wynosi zero:
-   $$
-   j_x(t) = \frac{da_x}{dt} = 0\text{ m/s}^3
-   $$
-   $$
-   j_y(t) = \frac{da_y}{dt} = 0\text{ m/s}^3
-   $$
+   
+$$
+j_x(t) = \frac{da_x}{dt} = 0\text{ m/s}^3
+$$
+   
+$$
+j_y(t) = \frac{da_y}{dt} = 0\text{ m/s}^3
+$$
 
 ### 1.2. Model Rzeczywisty (Atmosfera i Zmienne Przyspieszenie)
 
@@ -64,9 +74,11 @@ W warunkach rzeczywistych na obiekt działają dodatkowe siły:
 
 **Równania Przyspieszenia $\vec{a}(t)$:**
 Na podstawie II zasady dynamiki Newtona:
+
 $$
 a_x(t) = -k \cdot v \cdot v_x
 $$
+
 $$
 a_y(t) = -g(y) - k \cdot v \cdot v_y
 $$
@@ -78,7 +90,9 @@ Wiedząc, że $\frac{dv}{dt} = \frac{v_x a_x + v_y a_y}{v}$, różniczkujemy wek
 $$
 j_x(t) = \frac{da_x}{dt} = -k \left( \frac{dv}{dt} v_x + v a_x \right)
 $$
+
 Zmieniające się $g(y)$ generuje dodatkowy człon w osi pionowej: $\frac{dg(y)}{dt} = -2 g_0 \frac{R_Z^2}{(R_Z + y)^3} v_y$. Wobec tego:
+
 $$
 j_y(t) = \frac{da_y}{dt} = \frac{2 g_0 R_Z^2}{(R_Z + y)^3} v_y - k \left( \frac{dv}{dt} v_y + v a_y \right)
 $$
