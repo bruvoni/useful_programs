@@ -101,7 +101,7 @@ $$
 * Na początku ruchu ($t=0$), przy najwyższej prędkości $v_0$, opór powietrza hamuje obiekt najsilniej. W miarę jak prędkość maleje, siła hamowania drastycznie spada, co wywołuje dodatni zryw $j_x > 0$ (przyspieszenie hamowania $a_x$ staje się mniej ujemne).
 * W osi $Y$, w najwyższym punkcie toru (szczyt paraboli, $v_y = 0$), następuje zmiana zwrotu siły oporu pionowego, co powoduje charakterystyczne odkształcenie krzywej $j_y(t)$.
 
-![Porównanie modeli ruchu](kompleksowa_analiza_rzutu_uko_nego_files/wykresy.png)
+![Porównanie modeli ruchu](<img width="1589" height="985" alt="wykresy" src="https://github.com/user-attachments/assets/e5ab1f50-2cc5-4c8a-8df6-07e543791d2e" />)
 
 ---
 
