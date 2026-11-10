@@ -8,7 +8,7 @@ Niniejszy raport stanowi wyczerpujące opracowanie fizyczne zjawiska rzutu ukoś
 
 ### 1.1. Model Idealny (Próżnia)
 
-W modelu idealnym zakładamy brak jakichkolwiek oporów ruchu, a jedyną siłą działającą na ciało o masie $m$ jest siła ciężkości wywołana jednorodnym polem grawitacyjnym o stałym przyspieszeniu $g_0 \approx 9,81\text{ m/s}^2$. Ciało zostaje wyrzucone z prędkością początkową $v_0$ pod kątem $\alpha$ do poziomu.
+W modelu idealnym zakładamy brak jakichkolwiek oporów ruchu, a jedyną siłą działającą na ciało o masie $m$ jest siła ciężkości wywołana jednorodnym polem grawitacyjnym o stałym przyspieszeniu $g_0 \approx 9,81\mathrm{ m/s}^2$. Ciało zostaje wyrzucone z prędkością początkową $v_0$ pod kątem $\alpha$ do poziomu.
 
 **Rozkład prędkości początkowej:**
 
@@ -48,7 +48,7 @@ $$
    Różniczkując prędkość po czasie, otrzymujemy:
    
 $$
-a_x(t) = \frac{dv_x}{dt} = 0\text{ m/s}^2
+a_x(t) = \frac{dv_x}{dt} = 0\mathrm{ m/s}^2
 $$
    
 $$
@@ -59,7 +59,7 @@ $$
    Zryw określa dynamikę zmian przyspieszenia (tzw. szarpnięcie). W idealnym polu grawitacyjnym przyspieszenie jest stałe, więc jego pochodna wynosi zero:
    
 $$
-j_x(t) = \frac{da_x}{dt} = 0\text{ m/s}^3
+j_x(t) = \frac{da_x}{dt} = 0\mathrm{ m/s}^3
 $$
    
 $$
@@ -104,10 +104,10 @@ $$
 W tej części zaimplementujemy wyżej wyprowadzone zależności do konkretnego scenariusza początkowego. 
 
 **Parametry brzegowe:**
-* Prędkość początkowa: $v_0 = 36\text{ m/s}$
-* Kąt wyrzutu: $\alpha = 55^\circ = 55 \cdot \frac{\pi}{180} \approx 0,95993\text{ rad}$
-* Przyspieszenie bazowe: $g_0 = 9,81\text{ m/s}^2$
-* Parametry obiektu i ośrodka: $m = 0,5\text{ kg}$, $C_d = 0,47$ (kula), $A = 0,01\text{ m}^2$, $\rho = 1,225\text{ kg/m}^3$
+* Prędkość początkowa: $v_0 = 36\mathrm{ m/s}$
+* Kąt wyrzutu: $\alpha = 55^\circ = 55 \cdot \frac{\pi}{180} \approx 0,95993\mathrm{ rad}$
+* Przyspieszenie bazowe: $g_0 = 9,81\mathrm{ m/s}^2$
+* Parametry obiektu i ośrodka: $m = 0,5\mathrm{ kg}$, $C_d = 0,47$ (kula), $A = 0,01\mathrm{ m}^2$, $\rho = 1,225\mathrm{ kg/m}^3$
 
 ### Zestawienie Wyników Końcowych
 
@@ -115,10 +115,10 @@ Symulacja numeryczna rozwiązująca równania różniczkowe modelu rzeczywistego
 
 | Parametr Kinematyczny | Model Idealny | Model Rzeczywisty | Wpływ Warunków Rzeczywistych | 
 | :--- | :--- | :--- | :--- | 
-| **Zasięg maksymalny** $R$ | $124,11\text{ m}$ | $52,14\text{ m}$ | Skrócenie zasięgu o ok. $58\%$ | 
-| **Wysokość maksymalna** $H$ | $44,32\text{ m}$ | $23,15\text{ m}$ | Spłaszczenie toru lotu o ok. $48\%$ | 
-| **Czas lotu** $t_{całkowity}$ | $6,01\text{ s}$ | $4,41\text{ s}$ | Skrócenie czasu ekspozycji w powietrzu | 
-| **Początkowy zryw osi $X$** $j_{x}(0)$ | $0,00\text{ m/s}^3$ | $\approx 2,12\text{ m/s}^3$ | Silne szarpnięcie wywołane nagłym oporem po wystrzale | 
+| **Zasięg maksymalny** $R$ | $124,11\mathrm{ m}$ | $52,14\mathrm{ m}$ | Skrócenie zasięgu o ok. $58\%$ | 
+| **Wysokość maksymalna** $H$ | $44,32\mathrm{ m}$ | $23,15\mathrm{ m}$ | Spłaszczenie toru lotu o ok. $48\%$ | 
+| **Czas lotu** $t_{całkowity}$ | $6,01\mathrm{ s}$ | $4,41\mathrm{ s}$ | Skrócenie czasu ekspozycji w powietrzu | 
+| **Początkowy zryw osi $X$** $j_{x}(0)$ | $0,00\mathrm{ m/s}^3$ | $\approx 2,12\mathrm{ m/s}^3$ | Silne szarpnięcie wywołane nagłym oporem po wystrzale | 
 
 <img width="1589" height="985" alt="wykresy" src="https://github.com/user-attachments/assets/241347c6-630e-451c-90be-132627e15053" />
 
