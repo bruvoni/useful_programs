@@ -1,14 +1,12 @@
-# Analiza Fizyczna Rzutu Ukośnego
+# Kompleksowa Analiza Fizyczna Rzutu Ukośnego: Teoria i Praktyka
 
 Niniejszy raport stanowi wyczerpujące opracowanie fizyczne zjawiska rzutu ukośnego. Łączy on analityczne wyprowadzenie wzorów dla wyidealizowanych warunków (próżnia) z rygorystycznym modelem rzeczywistym, uwzględniającym opór aerodynamiczny, zmienne przyspieszenie ziemskie oraz trzecią pochodną położenia po czasie – zryw (ang. *jerk*). Referencyjny wpływ oporu powietrza na spłycenie trajektorii i skrócenie zasięgu został zilustrowany na załączonym schemacie `image_e1ecde.png`.
-
----
 
 ## Część 1: Analityczny Opis Zjawiska (Podstawy Teoretyczne)
 
 ### 1.1. Model Idealny (Próżnia)
 
-W modelu idealnym zakładamy brak jakichkolwiek oporów ruchu, a jedyną siłą działającą na ciało o masie $m$ jest siła ciężkości wywołana jednorodnym polem grawitacyjnym o stałym przyspieszeniu $g_0 \approx 9,81\mathrm{ m/s}^2$. Ciało zostaje wyrzucone z prędkością początkową $v_0$ pod kątem $\alpha$ do poziomu.
+W modelu idealnym zakładamy brak jakichkolwiek oporów ruchu, a jedyną siłą działającą na ciało o masie $m$ jest siła ciężkości wywołana jednorodnym polem grawitacyjnym o stałym przyspieszeniu $g_0 \approx 9,81 \mathrm{\ m/s^2}$. Ciało zostaje wyrzucone z prędkością początkową $v_0$ pod kątem $\alpha$ do poziomu.
 
 **Rozkład prędkości początkowej:**
 
@@ -20,56 +18,57 @@ $$
 v_{0y} = v_0 \sin\alpha
 $$
 
-**Zależności kinematyczne w funkcji czasu $t$:**
+**Wyprowadzenie równań położenia $x(t)$ i $y(t)$ z warunków początkowych:**
 
-1. **Położenie $\vec{r}(t)$:**
-   Ruch w osi $X$ jest jednostajny, a w osi $Y$ jednostajnie zmienny.
-   
+Zgodnie z II zasadą dynamiki Newtona ($\vec{F} = m\vec{a}$), w modelu idealnym jedyną siłą jest siła grawitacji $\vec{F} = [0, -mg_0]$. Z tego wynika, że wektor przyspieszenia wynosi $\vec{a} = [0, -g_0]$.
+
+Równania przyspieszenia w osiach układu współrzędnych mają postać:
+
 $$
-x(t) = (v_0 \cos\alpha) t
-$$
-   
-$$
-y(t) = (v_0 \sin\alpha) t - \frac{1}{2} g_0 t^2
+a_x(t) = \frac{dv_x}{dt} = 0 \mathrm{\ m/s^2}
 $$
 
-3. **Prędkość $\vec{v}(t)$:**
-   Prędkość uzyskujemy poprzez zróżniczkowanie wektora położenia po czasie $t$:
-   
-$$
-v_x(t) = \frac{dx}{dt} = v_0 \cos\alpha
-$$
-   
-$$
-v_y(t) = \frac{dy}{dt} = v_0 \sin\alpha - g_0 t
-$$
-
-5. **Przyspieszenie $\vec{a}(t)$:**
-   Różniczkując prędkość po czasie, otrzymujemy:
-   
-$$
-a_x(t) = \frac{dv_x}{dt} = 0\mathrm{ m/s}^2
-$$
-   
 $$
 a_y(t) = \frac{dv_y}{dt} = -g_0
 $$
 
-7. **Zryw (Jerk) $\vec{j}(t)$:**
-   Zryw określa dynamikę zmian przyspieszenia (tzw. szarpnięcie). W idealnym polu grawitacyjnym przyspieszenie jest stałe, więc jego pochodna wynosi zero:
-   
+Aby otrzymać równania prędkości, całkujemy przyspieszenie względem czasu $t$. Stałymi całkowania są tu składowe prędkości w chwili $t=0$, czyli $v_{0x}$ i $v_{0y}$:
+
 $$
-j_x(t) = \frac{da_x}{dt} = 0\mathrm{ m/s}^3
+v_x(t) = \int a_x(t) dt = v_{0x} = v_0 \cos\alpha
 $$
-   
+
 $$
-j_y(t) = \frac{da_y}{dt} = 0\text{ m/s}^3
+v_y(t) = \int a_y(t) dt = \int (-g_0) dt = -g_0 t + v_{0y} = v_0 \sin\alpha - g_0 t
+$$
+
+Kolejne całkowanie prędkości po czasie pozwala wyznaczyć położenie. Z racji tego, że przyjmujemy start z początku układu współrzędnych, nasze warunki początkowe to $x(0) = 0$ oraz $y(0) = 0$. Dzięki temu stałe całkowania zerują się:
+
+$$
+x(t) = \int v_x(t) dt = \int (v_0 \cos\alpha) dt = (v_0 \cos\alpha) t
+$$
+
+$$
+y(t) = \int v_y(t) dt = \int (v_0 \sin\alpha - g_0 t) dt = (v_0 \sin\alpha) t - \frac{1}{2} g_0 t^2
+$$
+
+**Zryw (Jerk) $\vec{j}(t)$:**
+Zryw określa dynamikę zmian przyspieszenia (tzw. szarpnięcie). W idealnym polu grawitacyjnym przyspieszenie jest stałe, więc jego pochodna wynosi zero:
+
+$$
+j_x(t) = \frac{da_x}{dt} = 0 \mathrm{\ m/s^3}
+$$
+
+$$
+j_y(t) = \frac{da_y}{dt} = 0 \mathrm{\ m/s^3}
 $$
 
 ### 1.2. Model Rzeczywisty (Atmosfera i Zmienne Przyspieszenie)
 
 W warunkach rzeczywistych na obiekt działają dodatkowe siły:
+
 * **Siła oporu aerodynamicznego:** $\vec{F}_d = -\frac{1}{2} C_d \rho A v \vec{v}$, gdzie $v = \sqrt{v_x^2 + v_y^2}$ to wartość chwilowej prędkości, $C_d$ to współczynnik oporu, $\rho$ to gęstość ośrodka, a $A$ to pole przekroju poprzecznego. Wprowadźmy współczynnik jednostkowy $k = \frac{C_d \rho A}{2 m}$.
+
 * **Zmienne przyspieszenie grawitacyjne:** $g(y) = g_0 \left(\frac{R_Z}{R_Z + y}\right)^2$, malejące wraz z wysokością $y$ ($R_Z$ to promień Ziemi).
 
 **Równania Przyspieszenia $\vec{a}(t)$:**
@@ -91,37 +90,39 @@ $$
 j_x(t) = \frac{da_x}{dt} = -k \left( \frac{dv}{dt} v_x + v a_x \right)
 $$
 
+
 Zmieniające się $g(y)$ generuje dodatkowy człon w osi pionowej: $\frac{dg(y)}{dt} = -2 g_0 \frac{R_Z^2}{(R_Z + y)^3} v_y$. Wobec tego:
 
 $$
 j_y(t) = \frac{da_y}{dt} = \frac{2 g_0 R_Z^2}{(R_Z + y)^3} v_y - k \left( \frac{dv}{dt} v_y + v a_y \right)
 $$
 
----
-
 ## Część 2: Scenariusz Praktyczny i Modelowanie Numeryczne
 
-W tej części zaimplementujemy wyżej wyprowadzone zależności do konkretnego scenariusza początkowego. 
+W tej części zaimplementujemy wyżej wyprowadzone zależności do konkretnego scenariusza początkowego.
 
 **Parametry brzegowe:**
-* Prędkość początkowa: $v_0 = 36\mathrm{ m/s}$
-* Kąt wyrzutu: $\alpha = 55^\circ = 55 \cdot \frac{\pi}{180} \approx 0,95993\mathrm{ rad}$
-* Przyspieszenie bazowe: $g_0 = 9,81\mathrm{ m/s}^2$
-* Parametry obiektu i ośrodka: $m = 0,5\mathrm{ kg}$, $C_d = 0,47$ (kula), $A = 0,01\mathrm{ m}^2$, $\rho = 1,225\mathrm{ kg/m}^3$
+
+* Prędkość początkowa: $v_0 = 36 \mathrm{\ m/s}$
+
+* Kąt wyrzutu: $\alpha = 55^\circ = 55 \cdot \frac{\pi}{180} \approx 0,95993 \mathrm{\ rad}$
+
+* Przyspieszenie bazowe: $g_0 = 9,81 \mathrm{\ m/s^2}$
+
+* Parametry obiektu i ośrodka: $m = 0,5 \mathrm{\ kg}$, $C_d = 0,47$ (kula), $A = 0,01 \mathrm{\ m^2}$, $\rho = 1,225 \mathrm{\ kg/m^3}$
 
 ### Zestawienie Wyników Końcowych
 
-Symulacja numeryczna rozwiązująca równania różniczkowe modelu rzeczywistego wykazuje drastyczne odchylenia od modelu idealnego:
+Symulacja numeryczna rozwiązująca równania różniczkowe modelu rzeczywistego wykazuje drastyczne odchylenia od modelu idealnego dla ustalonych wyżej zmiennych:
 
 | Parametr Kinematyczny | Model Idealny | Model Rzeczywisty | Wpływ Warunków Rzeczywistych | 
-| :--- | :--- | :--- | :--- | 
-| **Zasięg maksymalny** $R$ | $124,11\mathrm{ m}$ | $52,14\mathrm{ m}$ | Skrócenie zasięgu o ok. $58\%$ | 
-| **Wysokość maksymalna** $H$ | $44,32\mathrm{ m}$ | $23,15\mathrm{ m}$ | Spłaszczenie toru lotu o ok. $48\%$ | 
-| **Czas lotu** $t_{całkowity}$ | $6,01\mathrm{ s}$ | $4,41\mathrm{ s}$ | Skrócenie czasu ekspozycji w powietrzu | 
-| **Początkowy zryw osi $X$** $j_{x}(0)$ | $0,00\mathrm{ m/s}^3$ | $\approx 2,12\mathrm{ m/s}^3$ | Silne szarpnięcie wywołane nagłym oporem po wystrzale | 
+| ----- | ----- | ----- | ----- | 
+| **Zasięg maksymalny** $R$ | $124,11 \mathrm{\ m}$ | $\approx 78,7 \mathrm{\ m}$ | Skrócenie zasięgu o ok. $37\%$ | 
+| **Wysokość maksymalna** $H$ | $44,32 \mathrm{\ m}$ | $\approx 33,7 \mathrm{\ m}$ | Spłaszczenie toru lotu o ok. $24\%$ | 
+| **Czas lotu** $t_{\mathrm{calk}}$ | $6,01 \mathrm{\ s}$ | $\approx 5,23 \mathrm{\ s}$ | Skrócenie czasu ekspozycji w powietrzu o ok. $13\%$ | 
+| **Początkowy zryw osi** $X$ $j_{x}(0)$ | $0,00 \mathrm{\ m/s^3}$ | $\approx 2,12 \mathrm{\ m/s^3}$ | Silne szarpnięcie wywołane nagłym oporem po wystrzale | 
 
-<img width="1589" height="985" alt="wykresy" src="https://github.com/user-attachments/assets/241347c6-630e-451c-90be-132627e15053" />
-
+<img width="1589" height="985" alt="download" src="https://github.com/user-attachments/assets/c5287154-789b-417a-b0a9-0f29a2dc3299" />
 
 ### Skrypt Generujący Wizualizacje
 
