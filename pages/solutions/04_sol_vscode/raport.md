@@ -120,7 +120,7 @@ Symulacja numeryczna rozwiązująca równania różniczkowe modelu rzeczywistego
 | **Zasięg maksymalny** $R$ | $124,11 \mathrm{\ m}$ | $\approx 78,7 \mathrm{\ m}$ | Skrócenie zasięgu o ok. $37\%$ | 
 | **Wysokość maksymalna** $H$ | $44,32 \mathrm{\ m}$ | $\approx 33,7 \mathrm{\ m}$ | Spłaszczenie toru lotu o ok. $24\%$ | 
 | **Czas lotu** $t_{\mathrm{calk}}$ | $6,01 \mathrm{\ s}$ | $\approx 5,23 \mathrm{\ s}$ | Skrócenie czasu ekspozycji w powietrzu o ok. $13\%$ | 
-| **Początkowy zryw osi** $X$ $j_{x}(0)$ | $0,00 \mathrm{\ m/s^3}$ | $\approx 2,12 \mathrm{\ m/s^3}$ | Silne szarpnięcie wywołane nagłym oporem po wystrzale | 
+| **Początkowy zryw osi** $X$ $j_{x}(0)$ | $0,00 \mathrm{\ m/s^3}$ | $\approx 2,73 \mathrm{\ m/s^3}$ | Silne szarpnięcie wywołane nagłym oporem po wystrzale | 
 
 <img width="1589" height="985" alt="download" src="https://github.com/user-attachments/assets/c5287154-789b-417a-b0a9-0f29a2dc3299" />
 
